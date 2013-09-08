@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<div id="container" class="">
+	<div class="head"> Custom Grid with slot at configured position.</div>
+	<!-- Slots -->
+	<ul id="grid-slot">
+		<li class="grid-tile two_column " >
+				<ul class="slottemplate product product-style1">
+					<li data-itemid="2">A</li>
+					<li data-itemid="6"></li>
+				</ul>
+		</li>
+		<li class="grid-tile two_column " ><div data-itemid="14">C</div></li>
+		<li class="grid-tile two_by_two " ><div data-itemid="15">B</div></li>
+		<li class="grid-tile last two_by_two " ><div data-itemid="16">D</div></li>
+	</ul>
+  
+  <div class="main">
+	  <!-- Search Refinement -->
+	  <div class="leftbar" id="left">
+	  	<div class="filter"><a href="#">HIDE FILTER</a></div>
+	  </div>
+	  <!-- Product Grid Container -->
+	  <div class="right"> 
+		  <div class="filter-show" id="search-result" data-layout="denim"><a href="#">SHOW FILTER</a></div>
+		  <!-- Product Grid -->
+		  <ul class="search-result-items three_column">
+			<li class="grid-tile" ><div data-itemid="1">P1</div></li>
+			<li class="grid-tile" ><div data-itemid="2">P2</div></li>
+			<li class="grid-tile" ><div data-itemid="3">P3</div></li>
+			<li class="grid-tile" ><div data-itemid="4">P4</div></li>
+			<li class="grid-tile" ><div data-itemid="5">P5</div></li>
+			<li class="grid-tile" ><div data-itemid="6">P6</div></li>
+			<li class="grid-tile" ><div data-itemid="7">P7</div></li>
+			<li class="grid-tile" ><div data-itemid="8">P8</div></li>
+			<li class="grid-tile" ><div data-itemid="9">P9</div></li>
+			<li class="grid-tile" ><div data-itemid="10">P10</div></li>
+			<li class="grid-tile" ><div data-itemid="11">P11</div></li>
+			<li class="grid-tile" ><div data-itemid="12">P12</div></li>
+		  </ul>
+	  </div>  
+  </div>
+</div>
+<script src="./js/jquery-1.7.1.min.js"></script>
+<script src="./js/app.customgrid.js"></script>
+<script>
+
+$(document).ready(function(){	
+	var options = {
+			el : '.search-result-items',  //Products List Element selector
+			sl:'#grid-slot > li'		  //Slots List Element selector
+	};
+	app.customgrid.init(options).redraw();		
+});
+</script>
+</body>
+</html>

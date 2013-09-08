@@ -1,0 +1,26 @@
+body {margin: 0;padding: 0;}
+#container {background: none repeat scroll 0 0 #EEEEEE;margin: auto;max-width: 1280px;}
+.slottemplate.product.product-style1 {height: 300px;list-style: none outside none;}
+.head{	background-color: #ddd;    border: 1px solid #999;    height: 20px;    margin-bottom:10px;    font-weight:bold;}
+.search-result-items {display: block;margin: 0;padding: 0;width: 100%;float: left;}
+.right {float: left;width: 75%;}
+.filter ,.filter-show{background: none repeat scroll 0 0 #DDDDDD;}
+.leftbar {float: left;  min-height: 500px;  width: 25%;  }
+
+.grid-tile { font-size: 80px;background: none repeat scroll 0 0 #CCCCCC;float: left;list-style: none outside none;height: 300px;border: 1px solid #EEEEEE;}
+#grid-slot {  display: none;}
+.grid-tile  {    text-align: center;  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.grid-tile.two_column , .grid-tile.two_by_two{  background: none repeat scroll 0 0 #EA1D2B;color:#FFF;}
+.grid-tile.two_column ,.grid-tile.last.two_by_two{float: right;}
+
+.four_column .grid-tile {width: 25%;}
+.four_column .grid-tile.two_by_two {width: 50%; height:600px;}
+.four_column .grid-tile.two_column {width: 50%;}
+
+.three_column .grid-tile {width: 33.334%;}
+.three_column .grid-tile.two_by_two {width: 66.667%; height:600px;}
+.three_column .grid-tile.two_column {width: 66.667%;}
+
+.two_column .grid-tile {width:  50%;}
+.two_column .grid-tile.two_by_two {width:  100%; height:600px;}
+.two_column .grid-tile.two_column {width: 100%;}
