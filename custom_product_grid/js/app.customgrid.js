@@ -24,12 +24,13 @@ var app = (function (app, $) {
 					'3' : [ 0, 1, 3, 4 ],
 					'4' : [ 0, 2, 6, 8 ]
 				},
-				slot_class:{'two_column','two_by_two'}
+				slot_class:{'two_column','two_by_two'},
+				filter_el:'#left',
+				filter_show_el:'.filter-show',
+				filter_hide_el:'.filter'
 			},
-			//Products configured in slot
-			slot_products : [],
-			//Array of each element group
-			dom_stack : {
+			slot_products : [],													//Products configured in slot
+			dom_stack : {														//Array of each element group
 				slots : [],
 				group : {
 					'one_column' : [],
@@ -46,9 +47,9 @@ var app = (function (app, $) {
 				
 				if(windowWidth >= 1024 && windowWidth <= 1280){ n= 3;}
 				if(windowWidth >= 768 && windowWidth <= 1024){ n= 2;}
-				if(windowWidth < 768 ){ n= 1;$('#left').css('display','none')}
+				if(windowWidth < 768 ){ n= 1;$(_this.options.filter_el).css('display','none')}
 				
-				k = ($('#left').css('display')==='none')?n +1:n;
+				k = ($(_this.options.filter_el).css('display')==='none')?n +1:n;
 				
 				$(_this.options.el).removeClass(_this.options.rclass[4])
 								   .removeClass(_this.options.rclass[3])
@@ -56,7 +57,7 @@ var app = (function (app, $) {
 				
 				$(_this.options.el).addClass(_this.options.rclass[k]);
 				
-				percent = ($('#left').css('display')==='none')?'100':'75';
+				percent = ($(_this.options.filter_el).css('display')==='none')?'100':'75';
 				$('.right').css('width',percent+'%');
 				
 				return k;
@@ -121,12 +122,12 @@ var app = (function (app, $) {
 				});
 				_this.container = container;
 
-				$('.filter').on('click',function(e) {
+				$(_this.options.filter_hide_el).on('click',function(e) {
 					e.preventDefault();
 					$('.leftbar').hide();				
 					_this.redraw();
 				});
-				$('.filter-show').on('click',function(e) {
+				$(_this.options.filter_show_el).on('click',function(e) {
 							e.preventDefault();
 							$('.leftbar').show();				
 							_this.redraw();

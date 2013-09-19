@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="boilerplate/js"/>
+	<classpathentry excluding="jquery/|jquery/ui/|jquery/hashchange/|jquery/jcarousel/|jquery/zoom/|jquery/infinitescroll/|jquery/tooltip/|jquery/zoom/js/|jquery/cycle/|jquery/validate/" kind="src" path="boilerplate/lib"/>
+	<classpathentry excluding="ui/|hashchange/|jcarousel/|zoom/|infinitescroll/|tooltip/|zoom/js/|cycle/|validate/" kind="src" path="boilerplate/lib/jquery"/>
+	<classpathentry kind="src" path="boilerplate/lib/jquery/cycle"/>
+	<classpathentry kind="src" path="boilerplate/lib/jquery/hashchange"/>
+	<classpathentry kind="src" path="boilerplate/lib/jquery/infinitescroll"/>
+	<classpathentry kind="src" path="boilerplate/lib/jquery/jcarousel"/>
+	<classpathentry kind="src" path="boilerplate/lib/jquery/tooltip"/>
+	<classpathentry kind="src" path="boilerplate/lib/jquery/ui"/>
+	<classpathentry kind="src" path="boilerplate/lib/jquery/validate"/>
+	<classpathentry excluding="js/" kind="src" path="boilerplate/lib/jquery/zoom"/>
+	<classpathentry kind="src" path="boilerplate/lib/jquery/zoom/js"/>
+	<classpathentry kind="src" path="custom_product_grid/js"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

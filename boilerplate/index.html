@@ -1,0 +1,41 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <isscript>var pageContext={title:'Storefront',type:'storefront',ns:'storefront'};</isscript>
+  <isinclude template="util/modules"/>
+  <meta charset=UTF-8>
+	<meta name="description" content=" <isif condition="${!empty(pdict.CurrentPageMetaData.description)}">${pdict.CurrentPageMetaData.description}</isif> ${Resource.msg('global.storename','locale',null)}"/>
+	<meta name="keywords" content=" <isif condition="${!empty(pdict.CurrentPageMetaData.keywords)}">${pdict.CurrentPageMetaData.keywords}</isif> ${Resource.msg('global.storename','locale',null)}"/>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" media="print" href="./css/print.css" />
+	<!--  UI -->
+	<link rel="stylesheet" href="css/style.css" />
+  <script data-main="js/main" src="lib/require-jquery.js"></script>
+</head>
+<body>
+
+  <div id="wrapper" class="pt_storefront">
+
+    <isinclude url="${URLUtils.url('Home-IncludeHeader')}"/>
+
+    <div id="main" role="main">
+      <isreplace/>
+      <isinclude template="components/browsertoolscheck"/>
+    </div>
+
+		<isinclude template="util/modules"/>
+		
+		<div id="footer" role="contentinfo">
+		
+	  <footer>
+	    <iscontentasset aid="footer-copy"/>
+	  </footer>
+		
+		</div><!-- /footer -->
+   </div><!--  /wrapper -->
+  
+</body>
+</html>
