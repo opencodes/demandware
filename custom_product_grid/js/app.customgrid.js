@@ -18,13 +18,13 @@ var app = (function (app, $) {
 				el:'', 															//Main Product List Element Selector,
 				sl:'', 															//Slot List Element Selector,
 				root_el:'#wrapper',												//Root element just after body
-				rclass:{'4':'four_column','3':'three_column','2':'two_column'}	//responsive classes
+				rclass:{'4':'four_column','3':'three_column','2':'two_column'},	//responsive classes
 				slot_orders:{
 					'2' : [ 2, 4, 6, 8 ],
 					'3' : [ 0, 1, 3, 4 ],
 					'4' : [ 0, 2, 6, 8 ]
 				},
-				slot_class:{'two_column','two_by_two'},
+				slot_class:['two_column','two_by_two'],
 				filter_el:'#left',
 				filter_show_el:'.filter-show',
 				filter_hide_el:'.filter'
@@ -47,10 +47,9 @@ var app = (function (app, $) {
 				
 				if(windowWidth >= 1024 && windowWidth <= 1280){ n= 3;}
 				if(windowWidth >= 768 && windowWidth <= 1024){ n= 2;}
-				if(windowWidth < 768 ){ n= 1;$(_this.options.filter_el).css('display','none')}
+				if(windowWidth < 768 ){ n= 1;$(_this.options.filter_el).css('display','none');}
 				
 				k = ($(_this.options.filter_el).css('display')==='none')?n +1:n;
-				
 				$(_this.options.el).removeClass(_this.options.rclass[4])
 								   .removeClass(_this.options.rclass[3])
 								   .removeClass(_this.options.rclass[2]);
@@ -79,7 +78,7 @@ var app = (function (app, $) {
 							if (typeof (itemid) !== 'undefined') {
 								_this.slot_products.push(itemid);
 							}
-						})						
+						});						
 						// categories slots based on size
 						// slots having class 'two_column'
 						if (last_class == 'two_column'
@@ -105,10 +104,13 @@ var app = (function (app, $) {
 			 */
 			init : function(options) {
 				var _this = this;
-					_this.options = options;
 				
-				container = $(options.el).first().children();
-				slots = $(options.sl);
+				//collect all the inputs from user and ignore values that not required
+				for(var k in options){
+					if(typeof(_this.options[k])!=='undefined'){_this.options[k] = options[k];}
+				}
+				container = $(_this.options.el).first().children();
+				slots = $(_this.options.sl);
 				// If slots are available check all slot conditions
 
 				if (slots && slots.length >= 1 && container.length >= 1) {
@@ -167,7 +169,7 @@ var app = (function (app, $) {
 				}
 				$(_this.options.el).first().empty().html(html.join(' '));
 			}
-		}
+		};
 	return app;
 }(window.app = window.app || {}, jQuery));
 
